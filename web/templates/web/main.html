@@ -1,0 +1,32 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{% static 'web/css/style.css' %}">
+    <title>Document</title>
+</head>
+<body>
+<h1>TODO</h1>
+<table>
+    <td>
+        <th>to_do</th>
+        <th>done</th>
+        <th>created_at</th>
+        <th>until_date</th>
+    </td>
+    {% for todo in queryset %}
+        <tr>
+        <td>{{ todo.to_do }}</td>
+        <td>{{ todo.done }}</td>
+        <td>{{ todo.created_at }}</td>
+        <td>{{ todo.until_date }}</td>
+    </tr>
+    {% endfor %}
+
+</table>
+</body>
+</html>
